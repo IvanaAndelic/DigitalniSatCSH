@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DigitalniSat
@@ -14,8 +14,7 @@ namespace DigitalniSat
     public partial class Form1 : Form
     {
         public Form1()
-        {
-
+        { 
 
             InitializeComponent();
 
@@ -32,11 +31,11 @@ namespace DigitalniSat
 
 
         }
-        private Timer timer;
+        private System.Windows.Forms.Timer timer;
 
         public void inicijalizirajTimer()
         {
-            timer = new Timer();//po defaultu postoji prazan konstruktor
+            timer = new System.Windows.Forms.Timer();//po defaultu postoji prazan konstruktor
             timer.Tick += Timer_Tick;
             timer.Interval = 1000;
             timer.Start();
@@ -49,6 +48,10 @@ namespace DigitalniSat
 
         private void kulture_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CultureInfo odabran = kulture.SelectedItem as CultureInfo;
+            Thread.CurrentThread.CurrentCulture = odabran;
+            
+
 
         }
     }
