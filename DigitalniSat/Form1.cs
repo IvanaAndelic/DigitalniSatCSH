@@ -52,7 +52,6 @@ namespace DigitalniSat
             Thread.CurrentThread.CurrentCulture = odabran;
             
 
-
         }
     }
 }
