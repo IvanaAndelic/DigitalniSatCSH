@@ -41,6 +41,7 @@ namespace DigitalniSat
             timer.Start();
         }
 
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             vrijeme.Text = DateTime.Now.ToString();
